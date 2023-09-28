@@ -71,5 +71,11 @@ public class Personagem {
       sono
     );
   }
- 
+  void morrer(){
+  if(energia <= 0)
+    System.out.println(nome + "Game Over");
+  else
+    System.out.println(nome + "Continua vivo");
+  }
 }
+
