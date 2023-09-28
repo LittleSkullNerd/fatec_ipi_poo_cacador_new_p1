@@ -5,7 +5,8 @@ public class Personagem {
   private int energia = 10; //inicia com total de energia 
   private int fome = 0; //sem fome
   private int sono = 0;
-  private int item = 4; //sem sono
+  private int item = 4;//sem sono
+  private int alvo;
    //começa com 4 itens 
   //construtor: lista de parâmetros vazia
   // Personagem(){
@@ -53,8 +54,6 @@ public class Personagem {
     else{
       System.out.println(nome + " sem fome...");
     }
-
-  
   }
 
   void dormir(){
@@ -86,6 +85,19 @@ public class Personagem {
   }
   else
     System.out.println(nome + "Continua vivo");
+  }
+}
+
+void atacar(){
+  if(energia >= 1){
+    System.out.println(nome + "atacando" + alvo.nome "!" );
+  }
+  else if(energia < 0){
+    alvo.morrer();
+    //System.out.println(alvo.nome + "Personagem morreu...");
+  }
+  else{
+    System.out.println(nome + "Sem energia para atacar");
   }
 }
 
