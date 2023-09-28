@@ -2,13 +2,13 @@ public class Personagem {
  
   //atributos ou propriedades
   private String nome;
-  private int energia = 10;
-  private int fome = 0;
+  private int energia = 10; //inicia com total de energia 
+  private int fome = 0; //sem fome
   private int sono = 0;
-
+  private int item = 4; //sem sono
+   //começa com 4 itens 
   //construtor: lista de parâmetros vazia
   // Personagem(){
-
   // }
 
   Personagem(String nome){
@@ -30,6 +30,7 @@ public class Personagem {
     if(energia >= 2){
       System.out.println(nome + " caçando...");
       energia -= 2; // energia = energia - 2;
+      item++;
     }
     else{
       System.out.println (nome + " sem energia para caçar...");
@@ -59,21 +60,24 @@ public class Personagem {
     else{
       System.out.println(nome + " sem sono");
     }
-
   }
 
   void exibirEstado(){
     System.out.printf(
-      "%s: e: %d, f: %d, s: %d\n",
+      "%s: e: %d, f: %d, s: %d, i: %d\n",
       nome,
       energia,
       fome,
-      sono
+      sono,
+      item
     );
   }
+
   void morrer(){
-  if(energia <= 0)
+  if(energia <= 0){
     System.out.println(nome + "Game Over");
+    energia = 0;
+  }
   else
     System.out.println(nome + "Continua vivo");
   }
