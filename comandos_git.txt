@@ -1,0 +1,26 @@
+git config --local user.name "Luciana Sonoda"
+git config --local user.email lulu.sonoda@hotmail.com
+
+//adicionado "morrer"
+git status
+git add .
+git commit .\Jogo.java .\Personagem.java
+
+//adicionado "item"
+git status
+git add .
+git commit .\Personagem.java
+
+//adicionado "Refeição"
+git status
+git add.
+git commit .\Personagem.java
+
+//adicionando "Novo Personagem"
+git add .\Jogo.java
+git commit .\Jogo.java
+
+//adicionando "Batalha"
+git status
+git add .\Pesonagem.java
+git commit .\Personagem.java
