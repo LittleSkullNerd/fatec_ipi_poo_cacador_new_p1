@@ -6,11 +6,6 @@ public class Personagem {
   private int fome = 0; //sem fome
   private int sono = 0;
   private int item = 4;//sem sono
-  private int alvo;
-   //começa com 4 itens 
-  //construtor: lista de parâmetros vazia
-  // Personagem(){
-  // }
 
   Personagem(String nome){
     this.nome = nome;
@@ -28,12 +23,15 @@ public class Personagem {
 
   //comportamentos (métodos)
   void cacar(){
+    if(energia <= 0){
+      System.out.println(nome + " está morto e nao pode caçar");
+      return;
+    }
     if(energia >= 2){
       System.out.println(nome + " caçando...");
       energia -= 2; // energia = energia - 2;
       item++;
-    }
-    else{
+    } else {
       System.out.println (nome + " sem energia para caçar...");
     }
     fome = Math.min(fome + 1, 10);
@@ -41,6 +39,10 @@ public class Personagem {
   }
 
   void comer(){
+    if(energia <= 0){
+      System.out.println(nome + " está morto e nao pode comer");
+      return;
+    }
     if (fome >= 1 && item >= 1){
       System.out.println(nome + " comendo...");
       // operador ternário
@@ -57,13 +59,17 @@ public class Personagem {
   }
 
   void dormir(){
+    if(energia <= 0){
+      System.out.println(nome + " está morto e nao pode dormir");
+      return;
+    }
     if(sono > 0){
       System.out.println(nome + " dormindo...");
       sono -= 1;
       energia = Math.min(10, energia + 1);
     }
     else{
-      System.out.println(nome + " sem sono");
+      System.out.println(nome + " sem sono...");
     }
   }
 
@@ -80,24 +86,42 @@ public class Personagem {
 
   void morrer(){
   if(energia <= 0){
-    System.out.println(nome + "Game Over");
+    System.out.println(nome + " Game Over para " + nome);
     energia = 0;
   }
   else
-    System.out.println(nome + "Continua vivo");
+    System.out.println(nome + " Continua vivo ");
   }
+
+  void diminuirEnergia(){
+    this.energia--;
+    if(this.energia <= 0){
+      morrer();
+    }
+  }
+
+
+  void atacar(Personagem alvo){
+    if(energia <= 0){
+      System.out.println(nome + " está morto e nao pode atacar");
+    }
+    if(alvo.energia <= 0){
+      System.out.println(alvo.nome + " já esta morto " + nome + " não pode atacar um personagem morto");
+      return;
+    }
+    if(energia >= 1){
+      System.out.println(nome + " atacando " + alvo.nome + "!" );
+      alvo.diminuirEnergia();
+    }
+    else{
+      System.out.println(nome + " Sem energia para atacar ");
+    }
+  }
+
+public int getEnergia() {
+    return energia;
 }
 
-void atacar(){
-  if(energia >= 1){
-    System.out.println(nome + "atacando" + alvo.nome "!" );
-  }
-  else if(energia < 0){
-    alvo.morrer();
-    //System.out.println(alvo.nome + "Personagem morreu...");
-  }
-  else{
-    System.out.println(nome + "Sem energia para atacar");
-  }
 }
+
 
