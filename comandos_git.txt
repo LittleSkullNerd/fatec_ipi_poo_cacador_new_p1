@@ -24,3 +24,13 @@ git commit .\Jogo.java
 git status
 git add .\Pesonagem.java
 git commit .\Personagem.java
+
+//adicionando melhora na batalha de personagens(clone pelo o repositorio da Luciana para continuar)
+git add .\Pesonagem.java .\Personagem.java
+git status
+git commit
+git tag -a v1.0.0 -m "Teste Jogo Inicial"
+
+//ultimo commit para comandos_git.txt
+git add comandos_git.txt
+git commit
