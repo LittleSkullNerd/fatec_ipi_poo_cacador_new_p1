@@ -40,6 +40,6 @@ git push
 //comentarios adicionais
 git add .
 git commit comandos_git.txt
-.\Pesonagem.java
-.\Jogo.java 
+git commit .\Pesonagem.java
+git commit .\Jogo.java 
 git push
