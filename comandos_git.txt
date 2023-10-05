@@ -30,7 +30,16 @@ git add .\Pesonagem.java .\Personagem.java
 git status
 git commit
 git tag -a v1.0.0 -m "Teste Jogo Inicial"
+git push
 
 //ultimo commit para comandos_git.txt
 git add comandos_git.txt
 git commit
+git push
+
+//comentarios adicionais
+git add .
+git commit comandos_git.txt
+.\Pesonagem.java
+.\Jogo.java 
+git push
